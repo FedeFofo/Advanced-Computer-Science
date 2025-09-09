@@ -1,7 +1,9 @@
 public class Rectangle {
+    // instance variables
     private int length;
     private int width;
 
+    // constructors
     public Rectangle(int newLength, int newWidth) {
         length = newLength;
         width = newWidth; 
@@ -12,6 +14,7 @@ public class Rectangle {
         width = 100;
     }
 
+    // getters
     public int getLength() {
         return length;
     }
@@ -20,6 +23,7 @@ public class Rectangle {
         return width;
     }
 
+    // setters
     public void setLength(int input) {
         length = input; 
     }
@@ -28,6 +32,7 @@ public class Rectangle {
         width = input;
     }
 
+    // methods
     public String toString() {
         String description = "This rectangle has a length of " + length + " and a width of " 
             + width + " . Its area is 15.";
