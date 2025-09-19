@@ -52,7 +52,7 @@ public class Student {
     }
 
     public String generateId() {
-        int digitOne = (int) Math.random() * 8 + 1;
+        int digitOne = (int) (Math.random() * 8) + 1;
         int digitTwo = (int) (Math.random() * 8) + 1;
         int digitThree = (int) (Math.random() * 8) + 1;
         int digitFour = (int) (Math.random() * 10);
