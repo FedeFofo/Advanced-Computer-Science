@@ -1,6 +1,7 @@
 public class Student {
     // instance variables
-    private String name, id;
+    private String name;
+    private String id;
     private int grade;
 
     // constructors
@@ -48,7 +49,7 @@ public class Student {
     }
     
     public boolean equals(Student other) {
-        return name == other.name && grade == other.grade && id == other.id;
+        return name.equals(other.name) && grade == other.grade && id.equals(other.id);
     }
 
     public String generateId() {
@@ -59,7 +60,8 @@ public class Student {
         int digitFive = (int) (Math.random() * 10);
         int digitSix = (int) (Math.random() * 10);
         int digitSeven = (int) (Math.random() * 10);
-        String idNumber = digitOne + digitTwo + digitThree + "-" + digitFour + digitFive + digitSix + digitSeven;
+        String idNumber = "" + digitOne + digitTwo + digitThree 
+            + "-" + digitFour + digitFive + digitSix + digitSeven;
         return idNumber;
     }
 }
