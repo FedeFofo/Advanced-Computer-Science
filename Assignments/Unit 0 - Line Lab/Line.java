@@ -1,8 +1,8 @@
 public class Line {
     // instance variables
-    int a;
-    int b;
-    int c;
+    private int a;
+    private int b;
+    private int c;
 
     // constructors
     Line(int a, int b, int c) {
