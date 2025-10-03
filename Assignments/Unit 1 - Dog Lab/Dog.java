@@ -25,7 +25,7 @@ public class Dog {
         age = 5;
         dogId = 384;
         dogChar = generateDogChar();
-        dogTag = generateDogTag():
+        dogTag = generateDogTag();
         stillInFacility = true;
     }
 
@@ -101,12 +101,13 @@ public class Dog {
     }
 
     public String generateDogTag() {
-        return dogId + dogChar + "";
+        return "" + dogId + dogChar + "";
     }
 
     public char generateDogChar() {
         int firstDigit = dogId % 10;
         int secondDigit = (dogId / 10) % 10;
-        int thirdDigit = (dogID / 10) % 10;
+        int thirdDigit = (dogId / 100) % 10;
+        return (char) ((firstDigit + secondDigit + thirdDigit) % 10 + 'F');
     }
 }
