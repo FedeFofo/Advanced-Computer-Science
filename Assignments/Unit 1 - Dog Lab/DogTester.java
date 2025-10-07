@@ -24,13 +24,13 @@ public class DogTester {
         // Testing methods
         Dog spot = new Dog("Spot", "John", 8, 123);
         System.out.println("Spot's dogChar: " + Dog.generateDogChar(spot.getDogId())); // should output 'L'
-        System.out.println("Spot's dogTag:" + spot.generateDogTag()); // should output "123L"
+        System.out.println("Spot's dogTag:" + PawesomeUtils.generateDogTag(spot.getDogId(), spot.getDogChar())); // should output "123L"
         System.out.println(spot.toString());
         System.out.println();
 
         Dog rufus = new Dog("Rufus", "Mary", 4, 693);
         System.out.println("Rufus' dogChar: " + Dog.generateDogChar(rufus.getDogId())); // should output 'N'
-        System.out.println("Rufus' dogTag: " + rufus.generateDogTag()); // should output "693N"
+        System.out.println("Rufus' dogTag: " + PawesomeUtils.generateDogTag(rufus.getDogId(), rufus.getDogChar())); // should output "693N"
         System.out.println(rufus.toString());
         System.out.println();
 
@@ -65,6 +65,12 @@ public class DogTester {
         Dog.checkIn(morgan, "Stanley");
         System.out.println("Is Morgan in the facility? " + morgan.isStillInFacility()); // should output true
         System.out.println("What is Morgan's owner's name? " + morgan.getOwnerName()); // should output "Stanley"
+
+        // Testing static validateDogId() method
+        System.out.println(PawesomeUtils.validateDogId(456)); // should output 456
+        System.out.println(PawesomeUtils.validateDogId(2)); // should output random valid dogId
+        System.out.println(PawesomeUtils.validateDogId(999)); // should output 999
+        System.out.println(PawesomeUtils.validateDogId(100)); // should output 100
 
     }
 }
