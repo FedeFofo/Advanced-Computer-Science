@@ -4,6 +4,13 @@ public class PawesomeUtils {
         return "" + dogId + dogChar + "";
     }
 
+    public static char generateDogChar(int dogId) {
+        int firstDigit = dogId % 10;
+        int secondDigit = (dogId / 10) % 10;
+        int thirdDigit = (dogId / 100) % 10;
+        return (char) ((firstDigit + secondDigit + thirdDigit) % 10 + 'F');
+    }
+
     public static int validateDogId(int dogId) {
         if (dogId >= 100 && dogId <= 999) {
             return dogId;
@@ -12,15 +19,25 @@ public class PawesomeUtils {
         }
     }
 
+    public static String pickup(Dog dog, String personName) {
+        if (dog.getOwnerName().equals(personName)) {
+            dog.setStillInFacility(false);
+            return dog.getName() + " has been picked up by their owner " + dog.getOwnerName() + ".";
+        } else {
+            return dog.getName() + " cannot be picked up. Their owner is " + dog.getOwnerName() + ", and the person who came to collect them is " + personName + ".";
+        }
+    }
+
+    public static void checkIn(Dog dog, String personName) {
+        dog.setStillInFacility(true);
+        dog.setOwnerName(personName);
+    }
+
     public static boolean validateDogTag(Dog dog) {
         int dogId = dog.getDogId();
         dogId = validateDogId(dogId);
-        char dogChar = (Dog.generateDogChar(dogId));
-        String newDogTag = dogId + dogChar + "";
-        if (newDogTag.equals(dog.getDogTag())) {
-            return true;
-        } else {
-            return false;
-        }
+        char dogChar = (generateDogChar(dogId));
+        String newDogTag = "" + dogId + dogChar + "";
+        return newDogTag.equals(dog.getDogTag());
     }
 }
