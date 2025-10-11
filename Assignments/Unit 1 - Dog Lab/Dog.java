@@ -14,19 +14,19 @@ public class Dog {
         this.ownerName = ownerName;
         this.age = age;
         this.dogId = dogId;
-        dogChar = PawesomeUtils.generateDogChar(this.dogId);
-        dogTag = PawesomeUtils.generateDogTag(dogId, dogChar);
-        stillInFacility = true;
+        this.dogChar = PawesomeUtils.generateDogChar(this.dogId);
+        this.dogTag = PawesomeUtils.generateDogTag(this.dogId, this.dogChar);
+        this.stillInFacility = true;
     }
 
     public Dog() {
-        name = "Ozzie";
-        ownerName = "James";
-        age = 5;
-        dogId = 384;
-        dogChar = PawesomeUtils.generateDogChar(dogId);
-        dogTag = PawesomeUtils.generateDogTag(dogId, dogChar);
-        stillInFacility = true;
+        this.name = "Ozzie";
+        this.ownerName = "James";
+        this.age = 5;
+        this.dogId = 384;
+        this.dogChar = PawesomeUtils.generateDogChar(dogId);
+        this.dogTag = PawesomeUtils.generateDogTag(dogId, dogChar);
+        this.stillInFacility = true;
     }
 
     // getters
@@ -72,7 +72,12 @@ public class Dog {
     }
 
     public void setDogId(int dogId) {
+        if (dogId <= 100 || dogId >= 999) {
+            dogId = PawesomeUtils.validateDogId(dogId);
+        }
         this.dogId = dogId;
+        this.dogChar = PawesomeUtils.generateDogChar(this.dogId);
+        this.dogTag = PawesomeUtils.generateDogTag(this.dogId, this.dogChar);
     }
 
     public void setDogChar(char dogChar) {
@@ -90,13 +95,19 @@ public class Dog {
     // methods
     public String toString() {
         if (stillInFacility) {
-            return name + " is a good dog. They are " + age + " year(s) old and belong to " + ownerName + ". They are currently in our facility. For employee use only: dogTag is " + dogTag + ".";
+            return name + " is a good dog. They are " + age + " year(s) old and belong to " 
+                + ownerName + ". They are currently in our facility. For employee use only:" 
+                + "dogTag is " + dogTag + ".";
         } else {
-            return name + " is a good dog. They are " + age + " year(s) old and belong to " + ownerName + ". They are not currently in our facility. For employee use only: dogTag is " + dogTag + ".";
+            return name + " is a good dog. They are " + age + " year(s) old and belong to " 
+                + ownerName + ". They are not currently in our facility. For employee use only:" 
+                + "dogTag is " + dogTag + ".";
         }
     }
 
     public boolean equals(Dog other) {
-        return name.equals(other.name) && ownerName.equals(other.ownerName) && age == other.age && dogId == other.dogId && dogChar == other.dogChar && dogTag.equals(other.dogTag) && stillInFacility == other.stillInFacility;
+        return name.equals(other.name) && ownerName.equals(other.ownerName) && age == other.age 
+            && dogId == other.dogId && dogChar == other.dogChar && dogTag.equals(other.dogTag) 
+            && stillInFacility == other.stillInFacility;
     }
 }

@@ -24,17 +24,20 @@ public class DogTester {
         // Testing methods
         Dog spot = new Dog("Spot", "John", 8, 123);
         System.out.println("Spot's dogChar: " + PawesomeUtils.generateDogChar(spot.getDogId())); // should output 'L'
-        System.out.println("Spot's dogTag:" + PawesomeUtils.generateDogTag(spot.getDogId(), spot.getDogChar())); // should output "123L"
+        System.out.println("Spot's dogTag:" + PawesomeUtils.generateDogTag(spot.getDogId(), spot.getDogChar()));
+        // should output "123L"
         System.out.println(spot.toString());
         System.out.println();
 
         Dog rufus = new Dog("Rufus", "Mary", 4, 693);
-        System.out.println("Rufus' dogChar: " + PawesomeUtils.generateDogChar(rufus.getDogId())); // should output 'N'
+        System.out.println("Rufus' dogChar: " + PawesomeUtils.generateDogChar(rufus.getDogId()));
+        // should output 'N'
         System.out.println("Rufus' dogTag: " + PawesomeUtils.generateDogTag(rufus.getDogId(), rufus.getDogChar())); // should output "693N"
         System.out.println(rufus.toString());
         System.out.println();
 
-        System.out.println("Is Spot equal to Rufus? " + spot.equals(rufus)); // should output "false"
+        System.out.println("Is Spot equal to Rufus? " + spot.equals(rufus));
+        // should output "false"
 
         // Changing stillInFacility
         System.out.println();
@@ -53,9 +56,11 @@ public class DogTester {
         // Testing static pickup() method
         Dog johnny = new Dog("Johnny", "Robert", 7, 971);
         System.out.println(PawesomeUtils.pickup(johnny, "John"));
-        System.out.println("Is Johnny still in the facility? " + johnny.isStillInFacility()); // should output true
+        System.out.println("Is Johnny still in the facility? " + johnny.isStillInFacility());
+        // should output true
         System.out.println(PawesomeUtils.pickup(johnny, "Robert"));
-        System.out.println("Is Johnny still in the facility? " + johnny.isStillInFacility()); // should output false
+        System.out.println("Is Johnny still in the facility? " + johnny.isStillInFacility());
+        // should output false
         System.out.println();
 
         // Testing static checkIn() method
@@ -63,8 +68,10 @@ public class DogTester {
         morgan.setStillInFacility(false);
         System.out.println("Checking Morgan into the facility...");
         PawesomeUtils.checkIn(morgan, "Stanley");
-        System.out.println("Is Morgan in the facility? " + morgan.isStillInFacility()); // should output true
-        System.out.println("What is Morgan's owner's name? " + morgan.getOwnerName()); // should output "Stanley"
+        System.out.println("Is Morgan in the facility? " + morgan.isStillInFacility());
+        // should output true
+        System.out.println("What is Morgan's owner's name? " + morgan.getOwnerName());
+        // should output "Stanley"
         System.out.println();
 
         // Testing static validateDogId() method
@@ -76,16 +83,40 @@ public class DogTester {
 
         // Testing static validateDogTag() method
         Dog robert = new Dog("Robert", "Margaret", 14, 832);
-        System.out.println("Valid dogTag? " + PawesomeUtils.validateDogTag(robert)); // should output true
+        System.out.println("Valid dogTag? " + PawesomeUtils.validateDogTag(robert)); 
+        // should output true
         Dog charkie = new Dog("Charkie", "Betsy", 4, 632);
-        System.out.println("Valid dogTag? " + PawesomeUtils.validateDogTag(charkie)); // should output true
+        System.out.println("Valid dogTag? " + PawesomeUtils.validateDogTag(charkie)); 
+        // should output true
         Dog daniel = new Dog("Daniel", "Peggy", 7, 108);
-        System.out.println("Valid dogTag? " + PawesomeUtils.validateDogTag(daniel)); // should output true
+        System.out.println("Valid dogTag? " + PawesomeUtils.validateDogTag(daniel));
+        // should output true
         System.out.println();
 
         // Testing validateDogTag() edge cases
         robert.setDogTag("Hello");
-        System.out.println("Manually updating Robert's dogTag to \"Hello\"...");
-        System.out.println("Valid dogTag? " + PawesomeUtils.validateDogTag(robert));
+        System.out.println("Manually updating Robert's dogTag to" 
+            + "\"Hello\"...");
+        System.out.println("Valid dogTag? " 
+            + PawesomeUtils.validateDogTag(robert));
+        System.out.println();
+
+        // Testing static convertAgeToHumanAge()
+        Dog boyan = new Dog("Boyan", "Morgan", 1, 289);
+        System.out.println("Boyan's age in human years: " 
+            + PawesomeUtils.convertAgeToHumanAge(boyan)); // should output 15
+        Dog maxton = new Dog("Maxton", "Drake", 2, 323);
+        System.out.println("Maxton's age in human years: " + PawesomeUtils.convertAgeToHumanAge(maxton)); // should output 24
+        Dog juan = new Dog("Juan", "Boyan", 5, 287);
+        System.out.println("Juan's age in human years: " + PawesomeUtils.convertAgeToHumanAge(juan)); // should output 39
+        System.out.println();
+
+        // Testing static convertAgeToDogYears() 10,20,31
+        System.out.println("10 human years in dog years: " 
+            + PawesomeUtils.convertAgeToDogYears(10));
+        System.out.println("20 human years in dog years: "  
+            + PawesomeUtils.convertAgeToDogYears(20));
+        System.out.println("31 human years in dog years: "  
+            + PawesomeUtils.convertAgeToDogYears(31));
     }
 }
