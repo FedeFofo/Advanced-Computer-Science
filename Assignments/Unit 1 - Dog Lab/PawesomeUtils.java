@@ -42,7 +42,6 @@ public class PawesomeUtils {
 
     public static boolean validateDogTag(Dog dog) {
         int dogId = dog.getDogId();
-        dogId = validateDogId(dogId);
         char dogChar = (generateDogChar(dogId));
         String newDogTag = "" + dogId + dogChar + "";
         return newDogTag.equals(dog.getDogTag());
