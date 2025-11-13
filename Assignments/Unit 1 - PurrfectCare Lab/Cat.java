@@ -9,12 +9,12 @@ public class Cat {
 
     // constructors
     Cat(String name, String ownerName, int moodLevel, String catId) {
-        name = this.name;
-        ownerName = this.ownerName;
-        moodLevel = PurrfectUtils.validateMoodLevel(this.moodLevel);
-        catId = PurrfectUtils.validateCatId(this.catId);
-        catChar = PurrfectUtils.generateCatChar(catId);
-        isHungry = true;
+        this.name = name;
+        this.ownerName = ownerName;
+        this.moodLevel = PurrfectUtils.validateMoodLevel(moodLevel);
+        this.catId = PurrfectUtils.validateCatId(catId);
+        this.catChar = PurrfectUtils.generateCatChar(this.catId);
+        this.isHungry = true;
     }
 
     Cat() {
@@ -66,6 +66,7 @@ public class Cat {
 
     public void setCatId(String catId) {
         this.catId = PurrfectUtils.validateCatId(catId);
+        this.catChar = PurrfectUtils.generateCatChar(catId);
     }
 
     public void setCatChar(char catChar) {
@@ -82,14 +83,16 @@ public class Cat {
     }
 
     public String toString() {
-        String firstLine = "== ABOUT " + name + " ==";
-        String secondLine = name + " is a cat.";
-        String thirdLine = "Their tag is " + generateCatTag() + ".";
+        String firstLine = "== ABOUT " + name.toUpperCase() + " ==\n";
+        String secondLine = name + " is a cat.\n";
+        String thirdLine = "Their tag is " + generateCatTag() + ".\n";
         String fourthLine = PurrfectUtils.determineCatMood(this);
         return firstLine + secondLine + thirdLine + fourthLine;
     }
 
     public boolean equals(Cat other) {
-        return name.equals(other.name) && ownerName.equals(other.ownerName) && moodLevel == other.moodLevel && generateCatTag().equals(other.generateCatTag()) && isHungry == other.isHungry;
+        return name.equals(other.name) && ownerName.equals(other.ownerName) 
+            && moodLevel == other.moodLevel 
+            && generateCatTag().equals(other.generateCatTag()) && isHungry == other.isHungry;
     }
 }

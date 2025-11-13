@@ -4,16 +4,18 @@ public class PurrfectUtils {
         if (cat.getMoodLevel() > 7 && cat.getMoodLevel() <= 10) {
             return "Currently, " + cat.getName() + " is in a great mood.\nPetting is appreciated.";
         } else if (cat.getMoodLevel() > 3 && cat.getMoodLevel() <= 7) {
-            return "Currently, " + cat.getName() + " is reminiscing of a past life.\nPetting is acceptable.";
+            return "Currently, " + cat.getName() + " is reminiscing of a past life.\n" 
+                + "Petting is acceptable.";
         } else {
-            return "Currently, " + cat.getName() + " is plotting revengeance\nPetting is extremely risky.";
+            return "Currently, " + cat.getName() + " is plotting revengeance\n" 
+                + "Petting is extremely risky.";
         }
     }
 
     public static char generateCatChar(String catId) {
         int sum = 0;
         for (int i = 0; i < catId.length(); i++) {
-            sum += Integer.parseInt(catId.substring(i));
+            sum += Integer.parseInt(catId.substring(i, i + 1));
         }
         sum %= 26;
         sum += 'A';
@@ -67,7 +69,7 @@ public class PurrfectUtils {
 
     public static void trimClaws(Cat cat) {
         System.out.println("Attempting to trim claws...");
-        int decreaseMoodLevelBy = generateRandomNumber(1, 2);
+        int decreaseMoodLevelBy = generateRandomNumber(1, 3);
         if (decreaseMoodLevelBy == 1) {
             cat.setMoodLevel(cat.getMoodLevel() - decreaseMoodLevelBy);
             System.out.println(cat.getName() + " did not like that...");
