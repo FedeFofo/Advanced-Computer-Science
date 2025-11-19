@@ -4,7 +4,7 @@ public class NPC {
 
     // constructors
     NPC() {
-        choice = RPSGame.generateRandomChoice(); // TODO: implement method
+        choice = RPSGame.generateRandomChoice();
     }
 
     // getters
@@ -15,12 +15,15 @@ public class NPC {
     // setters
     public void setChoice(String choice) {
         choice = choice.toLowerCase();
-        // TODO: validate choice
-        this.choice = choice;
+        if (choice.equals("rock") || choice.equals("paper") || choice.equals("scissors")) {
+            this.choice = choice;
+        } else {
+            this.choice = RPSGame.generateRandomChoice();
+        }
     }
 
     // methods
     public String toString() {
-        return "Opponent chose " + choice;
+        return "Opponent chose " + choice + ".";
     }
 }

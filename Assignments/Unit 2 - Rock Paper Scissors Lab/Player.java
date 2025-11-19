@@ -25,8 +25,11 @@ public class Player {
 
     public void setChoice(String choice) {
         choice = choice.toLowerCase();
-        // TODO: validate choice
-        this.choice = choice;
+        if (choice.equals("rock") || choice.equals("paper") || choice.equals("scissors")) {
+            this.choice = choice;
+        } else {
+            this.choice = RPSGame.generateRandomChoice();
+        }
     }
 
     // methods
