@@ -6,17 +6,17 @@ public class ArrayOpsTester {
         System.out.println(" Testing printStringArray(): ");
         System.out.println("-----------------------------");
 
-        String[] stringArr1 = { "apple", "banana", "kiwi", "orange" };
+        String[] stringArr1 = {"apple", "banana", "kiwi", "orange"};
         System.out.println("\tprintStringArray(\"stringArr1\")");
         System.out.println("Expected output:\t[apple, banana, kiwi, orange]");
         System.out.println("Actual output:\t\t" + ArrayOps.printStringArray(stringArr1) + "\n");
 
-        String[] stringArr2 = { "cat", "dog", "elephant", "lion" };
+        String[] stringArr2 = {"cat", "dog", "elephant", "lion"};
         System.out.println("\tprintStringArray(\"stringArr2\")");
         System.out.println("Expected output:\t[cat, dog, elephant, lion]");
         System.out.println("Actual output:\t\t" + ArrayOps.printStringArray(stringArr2) + "\n");
 
-        String[] stringArr3 = { "red", "green", "blue", "yellow" };
+        String[] stringArr3 = {"red", "green", "blue", "yellow"};
         System.out.println("\tprintStringArray(\"stringArr3\")");
         System.out.println("Expected output:\t[red, green, blue, yellow]");
         System.out.println("Actual output:\t\t" + ArrayOps.printStringArray(stringArr3) + "\n");
@@ -26,32 +26,46 @@ public class ArrayOpsTester {
         System.out.println(" Testing printIntegerArray(): ");
         System.out.println("------------------------------");
 
-        int[] intArr1 = { 1, 2, 3, 4, 5 };
+        int[] intArr1 = {1, 2, 3, 4, 5};
         System.out.println("\tprintIntegerArray(\"intArr1\")");
         System.out.println("Expected output:\t[1, 2, 3, 4, 5]");
         System.out.println("Actual output:\t\t" + ArrayOps.printIntegerArray(intArr1) + "\n");
 
-        int[] intArr2 = { 10, 20, 30, 40, 50 };
+        int[] intArr2 = {10, 20, 30, 40, 50};
         System.out.println("\tprintIntegerArray(\"intArr2\")");
         System.out.println("Expected output:\t[10, 20, 30, 40, 50]");
         System.out.println("Actual output:\t\t" + ArrayOps.printIntegerArray(intArr2) + "\n");
 
-        int[] intArr3 = { -1, -2, -3, -4, -5 };
+        int[] intArr3 = {-1, -2, -3, -4, -5};
         System.out.println("\tprintIntegerArray(\"intArr3\")");
         System.out.println("Expected output:\t[-1, -2, -3, -4, -5]");
         System.out.println("Actual output:\t\t" + ArrayOps.printIntegerArray(intArr3) + "\n");
 
-        // I have not worked below this comment
+        // Testing findMax()
+        System.out.println("--------------------");
+        System.out.println(" Testing findMax(): ");
+        System.out.println("--------------------");
 
-        // int[] intArr4 = { 5, 10, 3, 8, 2 };
-        // System.out.println("Max: " + ArrayOps.findMax(intArr4)); // Output: Max: 10
+        int[] intArr4 = {5, 10, 3, 8, 2};
+        System.out.println("\tfindMax(\"intArr4\")");
+        System.out.println("Expected output:\t10");
+        System.out.println("Actual output:\t\t" + ArrayOps.findMax(intArr4) + "\n");
 
-        // int[] intArr5 = { -1, -5, -3, -2, -8 };
-        // System.out.println("Max: " + ArrayOps.findMax(intArr5)); // Output: Max: -1
+        int[] intArr5 = {-1, -5, -3, -2, -8};
+        System.out.println("\tfindMax(\"intArr5\")");
+        System.out.println("Expected output:\t-1");
+        System.out.println("Actual output:\t\t" + ArrayOps.findMax(intArr5) + "\n");
+        
+        int[] intArr6 = {100, 200, 300, 400, 500};
+        System.out.println("\tfindMax(\"intArr6\")");
+        System.out.println("Expected output:\t500");
+        System.out.println("Actual output:\t\t" + ArrayOps.findMax(intArr6) + "\n");
 
-        // int[] intArr6 = { 100, 200, 300, 400, 500 };
-        // System.out.println("Max: " + ArrayOps.findMax(intArr6)); // Output: Max: 500
-
+        // Testing findLongestString()
+        System.out.println("------------------------------");
+        System.out.println(" Testing findLongestString(): ");
+        System.out.println("------------------------------");
+        
         // System.out.println("Average String Length: " +
         // ArrayOps.averageStringLength(stringArr1));
         // // Output: Average String Length: 5.25

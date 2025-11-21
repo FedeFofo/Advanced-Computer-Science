@@ -23,18 +23,15 @@ public class ArrayOps {
         }
         return printedArray;
     }
-
-    // I have not worked below this comment
     
-    /**
-     * The method finds the largest integer in the array.
-     *
-     * @param array
-     *              The int array to find the maximum value from.
-     * @return The largest integer in the array.
-     */
     public static int findMax(int[] array) {
-        return 0;
+        int biggestNum = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > biggestNum) {
+                biggestNum = array[i];
+            }
+        }
+        return biggestNum;
     }
 
     /**
