@@ -5,6 +5,9 @@ public class Unit3ExercisesTester {
         testFindMaxValue();
         testIsPalindrome();
         testSumEvenNumbers();
+        testCalculateSumOfSquares();
+        testGetNthFibonacci();
+        testSortArrayDescending();
     }
 
     public static void testCalculateAverageStringLength() {
@@ -14,14 +17,14 @@ public class Unit3ExercisesTester {
 
         // Test Case - Main Case
         System.out.println("\t// Test Case - Main Case");
-        String[] letters = new String[] {"abc", "def", "ghi", "jkl"};
+        String[] letters = new String[] { "abc", "def", "ghi", "jkl" };
         System.out.println("Expected output:\t\t3.0");
         System.out.println(
                 "Actual output:\t\t\t" + Unit3Exercises.calculateAverageStringLength(letters));
 
         // Test Case - Edge Case: Null Element in Array
         System.out.println("\n\t// Test Case - Edge Case: Null Element in Array");
-        letters = new String[] {"abc", "def", "ghi", null, "jkl"};
+        letters = new String[] { "abc", "def", "ghi", null, "jkl" };
         System.out.println("Expected output:\t\t3.0");
         System.out.println(
                 "Actual output:\t\t\t" + Unit3Exercises.calculateAverageStringLength(letters));
@@ -80,19 +83,19 @@ public class Unit3ExercisesTester {
 
         // Test Case - Main Case
         System.out.println("\t// Test Case - Main Case");
-        int[] values = {6, 7, 3, 1, 4, 67};
+        int[] values = { 6, 7, 3, 1, 4, 67 };
         System.out.println("Expected output:\t\t67");
         System.out.println("Actual output:\t\t\t" + Unit3Exercises.findMaxValue(values));
 
         // Test Case - Edge Case: Array With Negatives and Zero
         System.out.println("\n\t// Test Case - Edge Case: Array With Negatives and Zero");
-        values = new int[] {-6, -7, -3, -1, -4, -67, 0};
+        values = new int[] { -6, -7, -3, -1, -4, -67, 0 };
         System.out.println("Expected output:\t\t0");
         System.out.println("Actual output:\t\t\t" + Unit3Exercises.findMaxValue(values));
 
         // Test Case - Edge Case: Array With Negatives
         System.out.println("\n\t// Test Case - Edge Case: Array With Negatives");
-        values = new int[] {-6, -7, -3, -1, -4, -67};
+        values = new int[] { -6, -7, -3, -1, -4, -67 };
         System.out.println("Expected output:\t\t-1");
         System.out.println("Actual output:\t\t\t" + Unit3Exercises.findMaxValue(values));
 
@@ -155,19 +158,19 @@ public class Unit3ExercisesTester {
 
         // Test Case - Main Case
         System.out.println("\t// Test Case - Main Case");
-        int[] values = {6, 77, 886, 67, 52, 973};
+        int[] values = { 6, 77, 886, 67, 52, 973 };
         System.out.println("Expected output:\t\t944");
         System.out.println("Actual output:\t\t\t" + Unit3Exercises.sumEvenNumbers(values));
 
         // Test Case - Edge Case: Only Negatives
         System.out.println("\n\t// Test Case - Edge Case: Only Negatives");
-        values = new int[] {-6, -77, -886, -67, -52, -973};
+        values = new int[] { -6, -77, -886, -67, -52, -973 };
         System.out.println("Expected output:\t\t-944");
         System.out.println("Actual output:\t\t\t" + Unit3Exercises.sumEvenNumbers(values));
 
         // Test Case - Edge Case: Positives and Negatives
         System.out.println("\n\t// Test Case - Edge Case: Positives and Negatives");
-        values = new int[] {6, -77, -886, -67, 52, 973};
+        values = new int[] { 6, -77, -886, -67, 52, 973 };
         System.out.println("Expected output:\t\t-828");
         System.out.println("Actual output:\t\t\t" + Unit3Exercises.sumEvenNumbers(values));
 
@@ -182,5 +185,83 @@ public class Unit3ExercisesTester {
                     .println("The method threw an exception when the array was null, as intended.");
         }
 
+    }
+
+    public static void testCalculateSumOfSquares() {
+        System.out.println("\n-------------------------------");
+        System.out.println(" Testing calculateSumOfSquares ");
+        System.out.println("-------------------------------\n");
+
+        // Test Case - Main Case
+        System.out.println("\t// Test Case - Main Case");
+        int[] values = { 6, 2, 3, 5 };
+        System.out.println("Expected output:\t\t74");
+        System.out.println("Actual output:\t\t\t" + Unit3Exercises.calculateSumOfSquares(values));
+
+        // Test Case - Edge Case: Null Array
+        System.out.println("\n\t// Test Case - Edge Case: Null Array");
+        try {
+            values = null;
+            Unit3Exercises.calculateSumOfSquares(values);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            System.out.println("The method threw an exception when the array was null, as intended.");
+        }
+    }
+
+    public static void testGetNthFibonacci() {
+        System.out.println("\n-------------------------");
+        System.out.println(" Testing getNthFibonacci ");
+        System.out.println("-------------------------\n");
+
+        // Test Case - Main Case
+        System.out.println("\t// Test Case - Main Case");
+        int number = 4;
+        System.out.println("Expected output:\t\t3");
+        System.out.println("Actual output:\t\t\t" + Unit3Exercises.getNthFibonacci(number));
+
+        // Test Case - Edge Case: Negative Input
+        System.out.println("\n\t// Test Case - Edge Case: Negative Integer");
+        try {
+            number = -4;
+            Unit3Exercises.getNthFibonacci(number);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            System.out.println("The method threw an exception when the integer was negative, as intended.");
+        }
+    }
+
+    public static void testSortArrayDescending() {
+        System.out.println("\n-----------------------------");
+        System.out.println(" Testing sortArrayDescending ");
+        System.out.println("-----------------------------\n");
+
+        // Test Case - Main Case: Positive Integers
+        System.out.println("\t// Test Case - Main Case: Positive Integers");
+        int[] values = { 67, 100, 50, 21, 16, 3 };
+        System.out.println("Expected output:\t\t[100, 67, 50, 21, 16, 3]");
+        System.out
+                .println("Actual output:\t\t\t" + Utils.printIntegerArray(Unit3Exercises.sortArrayDescending(values)));
+
+        // Test Case - Main Case: Negative Integers
+        System.out.println("\n\t// Test Case - Main Case: Negative Integers");
+        values = new int[] { -67, -100, -50, -21, -16, -3 };
+        System.out.println("Expected output:\t\t[-3, -16, -21, -50, -67, -100]");
+        System.out
+                .println("Actual output:\t\t\t" + Utils.printIntegerArray(Unit3Exercises.sortArrayDescending(values)));
+
+        // Test Case - Edge Case: Null Array
+        System.out.println("\n\t// Test Case - Edge Case: Null Array");
+        try {
+            values = null;
+            Unit3Exercises.sortArrayDescending(values);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            System.out.println("The method threw an exception when the array was null, as intended.");
+        }
+    }
+
+    public static void testFindLongestWorkd() {
+        
     }
 }

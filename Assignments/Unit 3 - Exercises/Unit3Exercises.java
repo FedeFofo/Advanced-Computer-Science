@@ -1,5 +1,6 @@
 public class Unit3Exercises {
     // Intended: return the average length of the strings in the array.
+    
     // Fixes made:
     // * added check to see if element is null
     // * added check to see if array is null
@@ -21,8 +22,10 @@ public class Unit3Exercises {
     }
 
     // Intended: produce a new string with the characters of the input reversed.
+    
     // Fixes made:
-    // * rebuilt part of method that reverses using a for loop (now uses less lines and works)
+    // * rebuilt part of method that reverses using a for loop (now uses less lines
+    // and works)
     // * added check to see if string is null
     public static String reverseString(String str) {
         if (str == null) {
@@ -42,8 +45,10 @@ public class Unit3Exercises {
     }
 
     // Intended: return the largest value found in the array.
+    
     // Fixes made:
-    // * corrected an off-by-one error within for loop (max = numbers[i], not max = numbers[i - 1])
+    // * corrected an off-by-one error within for loop (max = numbers[i], not max =
+    // numbers[i - 1])
     // * added check to see if array is null
     public static int findMaxValue(int[] numbers) {
         if (numbers == null) {
@@ -60,7 +65,9 @@ public class Unit3Exercises {
         return max;
     }
 
-    // Intended: check whether the input string reads the same forwards and backwards.
+    // Intended: check whether the input string reads the same forwards and
+    // backwards.
+    
     // Fixes made:
     // * utilized preexisting methods to simplify existing code to one line
     // * added check to see if string is null
@@ -75,6 +82,7 @@ public class Unit3Exercises {
     }
 
     // Intended: sum only the even numbers in the array.
+    
     // Fixes made:
     // * removed completely unnecessary & harmful if statement
     // * fixed two off-by-one errors
@@ -94,4 +102,79 @@ public class Unit3Exercises {
         return sum;
     }
 
+    // Method Description: The method calculates the sum of the squares of numbers
+    // in an array.
+    
+    // Fixes made:
+    // * changed i in the for loop to start at 0, not 1
+    // * added check to see if array is null
+    public static int calculateSumOfSquares(int[] numbers) {
+        if (numbers == null) {
+            throw new NullPointerException("Array is null");
+        }
+        int sum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            sum += Math.pow(numbers[i], 2);
+        }
+        return sum;
+    }
+
+    // Method Description: The method returns the nth Fibonacci number, the sequence
+    // starts with 1.
+    
+    // Fixes made:
+    // * added check to see if n is negative
+    public static int getNthFibonacci(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Integer n cannot be negative");
+        } else if (n <= 1) {
+            return n;
+        }
+
+        int a = 0, b = 1, c;
+        for (int i = 2; i <= n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return b;
+    }
+
+    // Method Description: The method sorts an array in descending order.
+    
+    // Fixes made:
+    // * changed if statement from sorting the array in ascending order to sorting
+    // the array in descending order
+    // * added check to see if array is null
+    public static int[] sortArrayDescending(int[] arr) {
+        if (arr == null) {
+            throw new NullPointerException("Array is null");
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[i]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
+    // Method Description: The method takes a String, creates an array of the words
+    // separated by spaces, and returns the longest word in the sentence. If there
+    // are words with equal lengths, it returns the first one.
+    // Fixes made:
+    // *
+    public static String findLongestWord(String sentence) {
+        String[] words = sentence.split(" ");
+        String longestWord = "";
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() >= longestWord.length()) {
+                longestWord = words[i];
+            }
+        }
+        return longestWord;
+    }
 }
