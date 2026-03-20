@@ -22,4 +22,3 @@ public interface Predator {
     public void eatPrey();
 
 }
-
