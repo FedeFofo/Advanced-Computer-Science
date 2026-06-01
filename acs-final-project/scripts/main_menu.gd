@@ -1,0 +1,18 @@
+extends Control
+
+@onready var select_sfx: AudioStreamPlayer2D = $SelectSFX
+
+func _ready() -> void:
+	$CenterContainer/VBoxContainer/StartButton.pressed.connect(_on_start_pressed)
+	$CenterContainer/VBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
+
+func _on_start_pressed() -> void:
+	select_sfx.play()
+	await select_sfx.finished
+	GameState.change_to(GameState.State.PLAYING)
+	get_tree().change_scene_to_file("res://scenes/level1.tscn")
+
+func _on_quit_pressed() -> void:
+	select_sfx.play()
+	await select_sfx.finished
+	get_tree().quit()

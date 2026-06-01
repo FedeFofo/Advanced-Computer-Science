@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dyunq4fpyvcv5"]
+
+[ext_resource type="Script" uid="uid://bnqmno0luxcsp" path="res://scripts/pickup.gd" id="1_7cqbe"]
+[ext_resource type="Texture2D" uid="uid://dlm061o1k1tne" path="res://assets/Sprites/Tiles/Double/coin_gold.png" id="2_gyxxy"]
+[ext_resource type="Texture2D" uid="uid://do5k8qbad565l" path="res://assets/Sprites/Tiles/Double/coin_gold_side.png" id="3_4m06l"]
+[ext_resource type="AudioStream" uid="uid://xokp1emwgeo7" path="res://assets/Sounds/sfx_coin.ogg" id="4_4m06l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqyie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gyxxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4m06l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7cqbe"]
+radius = 8.0
+
+[node name="Pickup" type="Area2D" unique_id=1729621276]
+script = ExtResource("1_7cqbe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=240759612]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_hqyie")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784603589]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_7cqbe")
+
+[node name="CoinSFX" type="AudioStreamPlayer2D" parent="." unique_id=82127628]
+stream = ExtResource("4_4m06l")

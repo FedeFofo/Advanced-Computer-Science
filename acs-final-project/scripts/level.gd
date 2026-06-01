@@ -1,0 +1,23 @@
+extends Node2D
+
+@export var next_level: PackedScene
+
+func _ready() -> void:
+	MusicManager.play()
+	
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		enemy.died.connect(_on_enemy_died)
+	$ExitFlag.body_entered.connect(_on_exit_flag_body_entered)
+
+	var player := get_tree().get_first_node_in_group("player")
+	if player and has_node("HUD"):
+		$HUD.bind_to_player(player)
+
+func _on_enemy_died(_position: Vector2) -> void:
+	ScoreManager.add(100)
+
+func _on_exit_flag_body_entered(body):
+	if body.is_in_group("player") and next_level:
+		# body_entered fires mid-physics; defer the swap so it runs
+		# after the physics step finishes instead of during it.
+		get_tree().change_scene_to_packed.call_deferred(next_level)

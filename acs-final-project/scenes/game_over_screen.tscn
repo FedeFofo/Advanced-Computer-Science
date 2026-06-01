@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://pnn405ih26jj"]
+
+[ext_resource type="Script" uid="uid://deguffuvkixj2" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
+[ext_resource type="FontFile" uid="uid://brt2io184t5mt" path="res://assets/Poppins-Medium.ttf" id="2_61w2s"]
+[ext_resource type="AudioStream" uid="uid://bd3qbddwf8vgm" path="res://assets/Sounds/sfx_select.ogg" id="3_jw6e5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw6e5"]
+bg_color = Color(0.08235294, 0.5686275, 0.8627451, 1)
+border_width_bottom = 4
+border_color = Color(0.06666667, 0.43137255, 0.65882355, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 32.0
+expand_margin_right = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61w2s"]
+bg_color = Color(0.06666667, 0.43137255, 0.65882355, 1)
+border_width_top = 4
+border_color = Color(0.08235294, 0.5686275, 0.8627451, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 32.0
+expand_margin_right = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa2qn"]
+bg_color = Color(0.06666667, 0.43137255, 0.65882355, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 32.0
+expand_margin_right = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyfkl"]
+bg_color = Color(1, 0, 0.32156864, 1)
+border_width_bottom = 4
+border_color = Color(0.60784316, 0, 0.18039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 32.0
+expand_margin_right = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx0b3"]
+bg_color = Color(0.60784316, 0, 0.18039216, 1)
+border_width_top = 4
+border_color = Color(1, 0, 0.32156864, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 32.0
+expand_margin_right = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5i0af"]
+bg_color = Color(0.60784316, 0, 0.18039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 32.0
+expand_margin_right = 32.0
+
+[node name="GameOverScreen" type="Control" unique_id=74026541]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwahs")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=953980531]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0.7764706, 0.5529412, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=503843681]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1176824437]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1516622077]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_61w2s")
+theme_override_font_sizes/font_size = 80
+text = "Game Over!"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1972791765]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_61w2s")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=992251645]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_61w2s")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_jw6e5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_61w2s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wa2qn")
+text = "Retry"
+
+[node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1989038398]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_61w2s")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_cyfkl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xx0b3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5i0af")
+text = "Main Menu"
+
+[node name="SelectSFX" type="AudioStreamPlayer2D" parent="." unique_id=712706995]
+stream = ExtResource("3_jw6e5")

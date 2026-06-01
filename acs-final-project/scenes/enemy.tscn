@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dms1o6mbk7e3v"]
+
+[ext_resource type="Script" uid="uid://bjhexoo33gafd" path="res://scripts/enemy.gd" id="1_g0wcc"]
+[ext_resource type="Texture2D" uid="uid://btufq0wua3gk3" path="res://assets/Sprites/Enemies/Double/slime_block_walk_a.png" id="2_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://d3gbfmvx8vmxd" path="res://assets/Sprites/Enemies/Double/slime_block_walk_b.png" id="3_5uy6h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qaulx"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ra3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5uy6h")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4w8v"]
+size = Vector2(52, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
+size = Vector2(53, 47)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=758068217]
+script = ExtResource("1_g0wcc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1072316006]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_qaulx")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.9285176
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1168028786]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_c4w8v")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1011093850]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1107451451]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_4ra3w")
