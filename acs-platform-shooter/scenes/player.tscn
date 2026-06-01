@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://t1oguhbpmgxe" path="res://assets/character/idle/Idle_11.png" id="12_ke2ow"]
 [ext_resource type="Texture2D" uid="uid://dgme4sxfrrrgw" path="res://assets/character/idle/Idle_12.png" id="13_ujl30"]
 [ext_resource type="Texture2D" uid="uid://d2teia44tb7vk" path="res://assets/character/idle/Idle_13.png" id="14_31cv2"]
+[ext_resource type="AudioStream" uid="uid://bbfoq4t1hj01j" path="res://assets/audio/jump.ogg" id="17_qfm1y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pf23h"]
 animations = [{
@@ -89,3 +90,6 @@ shape = SubResource("CapsuleShape2D_f1ej7")
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=1453977299]
 position = Vector2(30, 13)
+
+[node name="JumpSFX" type="AudioStreamPlayer2D" parent="." unique_id=558456847]
+stream = ExtResource("17_qfm1y")

@@ -11,3 +11,10 @@ res://scenes/pause_menu.tscn
 res://scenes/game_over_screen.tscn
 res://scripts/game_over_screen.gd
 res://scripts/pause_menu.gd
+res://scenes/level1.tscn
+res://scripts/level.gd
+res://scenes/level2.tscn
+res://scripts/player.gd
+res://scenes/hud.tscn
+res://scripts/hud.gd
+res://scenes/player.tscn

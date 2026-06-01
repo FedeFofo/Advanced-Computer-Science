@@ -7,7 +7,7 @@ func _ready() -> void:
 func _on_retry_pressed() -> void:
 	ScoreManager.reset()
 	GameState.change_to(GameState.State.PLAYING)
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	get_tree().change_scene_to_file("res://scenes/level1.tscn")
 
 func _on_menu_pressed() -> void:
 	ScoreManager.reset()

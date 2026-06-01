@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var muzzle: Marker2D = $Muzzle
+@onready var jump_sfx: AudioStreamPlayer2D = $JumpSFX
 
 var score: int = 0
 var facing: int = 1
@@ -20,6 +21,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
+		jump_sfx.play()
 
 	var dir := Input.get_axis("move_left", "move_right")
 	velocity.x = dir * speed
@@ -39,3 +41,16 @@ func _shoot() -> void:
 	b.global_position = muzzle.global_position
 	b.direction = facing
 	get_tree().current_scene.add_child(b)
+
+signal died
+signal health_changed(new_health: int)
+
+@export var max_health: int = 3
+var health: int = max_health
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	health_changed.emit(health)
+	if health <= 0:
+		died.emit()
+		queue_free()
