@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jmudkncnv5wt" path="res://scenes/ground_block.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dyunq4fpyvcv5" path="res://scenes/pickup.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dms1o6mbk7e3v" path="res://scenes/enemy.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://d1omj0oy2kmoh" path="res://scenes/pause_menu.tscn" id="6_qfnet"]
 
 [node name="World" type="Node2D" unique_id=2072802174]
 script = ExtResource("1_71j4m")
@@ -49,3 +50,5 @@ position = Vector2(838, 259)
 
 [node name="Enemy2" parent="." unique_id=928563681 instance=ExtResource("4_k0juu")]
 position = Vector2(700, 193)
+
+[node name="PauseMenu" parent="." unique_id=1360648090 instance=ExtResource("6_qfnet")]

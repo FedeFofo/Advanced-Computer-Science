@@ -3,3 +3,11 @@ res://scripts/enemy.gd
 res://scenes/world.tscn
 res://autoload/score_manager.gd
 res://scripts/world.gd
+res://autoload/game_state.gd
+res://scenes/main_menu.tscn
+res://scripts/main_menu.gd
+res://scenes/main.tscn
+res://scenes/pause_menu.tscn
+res://scenes/game_over_screen.tscn
+res://scripts/game_over_screen.gd
+res://scripts/pause_menu.gd
