@@ -1,13 +1,51 @@
 [gd_scene format=3 uid="uid://de0wntgk3m106"]
 
+[ext_resource type="Script" uid="uid://c7scaetrh60aa" path="res://scripts/world.gd" id="1_71j4m"]
 [ext_resource type="PackedScene" uid="uid://ot6xhj38c7ew" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://jmudkncnv5wt" path="res://scenes/ground_block.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dyunq4fpyvcv5" path="res://scenes/pickup.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://dms1o6mbk7e3v" path="res://scenes/enemy.tscn" id="4_k0juu"]
 
 [node name="World" type="Node2D" unique_id=2072802174]
+script = ExtResource("1_71j4m")
 
 [node name="Player" parent="." unique_id=2033560623 instance=ExtResource("1_nnsk1")]
-position = Vector2(640, 360)
+position = Vector2(524, 429)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1758966246]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.08773693, 0.2254008, 0.78296983, 1)
+
+[node name="GroundBlock" parent="." unique_id=1509054811 instance=ExtResource("2_rwgxs")]
+position = Vector2(511, 565)
+
+[node name="GroundBlock2" parent="." unique_id=717749282 instance=ExtResource("2_rwgxs")]
+position = Vector2(593, 565)
+
+[node name="GroundBlock3" parent="." unique_id=78775783 instance=ExtResource("2_rwgxs")]
+position = Vector2(675, 565)
+
+[node name="GroundBlock4" parent="." unique_id=12409816 instance=ExtResource("2_rwgxs")]
+position = Vector2(757, 565)
+
+[node name="GroundBlock5" parent="." unique_id=1127706232 instance=ExtResource("2_rwgxs")]
+position = Vector2(839, 483)
+
+[node name="GroundBlock6" parent="." unique_id=644668286 instance=ExtResource("2_rwgxs")]
+position = Vector2(921, 483)
+
+[node name="GroundBlock7" parent="." unique_id=339270263 instance=ExtResource("2_rwgxs")]
+position = Vector2(1003, 483)
+
+[node name="GroundBlock8" parent="." unique_id=134609606 instance=ExtResource("2_rwgxs")]
+position = Vector2(675, 348)
+
+[node name="Pickup" parent="." unique_id=1729621276 instance=ExtResource("3_4wyf3")]
+position = Vector2(921, 395)
+
+[node name="Enemy" parent="." unique_id=758068217 instance=ExtResource("4_k0juu")]
+position = Vector2(838, 259)
+
+[node name="Enemy2" parent="." unique_id=928563681 instance=ExtResource("4_k0juu")]
+position = Vector2(700, 193)

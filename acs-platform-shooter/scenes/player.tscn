@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ccate38dt0npp" path="res://assets/character/idle/Idle_00.png" id="1_f1ej7"]
 [ext_resource type="Script" uid="uid://b4r37ctxr5xby" path="res://scripts/player.gd" id="1_oprun"]
+[ext_resource type="PackedScene" uid="uid://dm11ak8vjt7g8" path="res://scenes/bullet.tscn" id="2_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://c47lrrd8d5tmw" path="res://assets/character/idle/Idle_01.png" id="2_oprun"]
 [ext_resource type="Texture2D" uid="uid://cbstakbvbvwxa" path="res://assets/character/idle/Idle_02.png" id="3_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://d1gedd2576n1c" path="res://assets/character/idle/Idle_03.png" id="4_qfm1y"]
@@ -68,10 +69,13 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1ej7"]
 radius = 30.0
-height = 100.0
+height = 115.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2033560623]
 script = ExtResource("1_oprun")
+speed = 300.0
+jump_velocity = -550.0
+bullet_scene = ExtResource("2_a8ls1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1166555852]
 scale = Vector2(0.6, 0.6)
@@ -82,3 +86,6 @@ autoplay = "default"
 shape = SubResource("CapsuleShape2D_f1ej7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1690689694]
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1453977299]
+position = Vector2(30, 13)

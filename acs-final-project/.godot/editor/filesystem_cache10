@@ -1,0 +1,19 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1780186547
+icon.svg::CompressedTexture2D::325080196709315965::1780186445::1780186448::1::::<><><>0<>0<>d9d6cdf648d5338d60940a50dddda4a2<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1780186547
+::res://assets/audio/::1780186540
+explode.wav::AudioStreamWAV::1118351915961379483::1780186535::1780186540::1::::<><><>0<>0<>2d561044db191e5d21cc9fe10438e42a<>res://.godot/imported/explode.wav-cfae5cfb6a02bfb408c9d57edb8ba93d.sample::
+hit.wav::AudioStreamWAV::7038118798660299786::1780186535::1780186540::1::::<><><>0<>0<>b577995876a10f871b5510642df027f6<>res://.godot/imported/hit.wav-96dc477cdf4a42f381370dba6e3f75ce.sample::
+sfx_laser2.wav::AudioStreamWAV::2827170927738333967::1780186535::1780186540::1::::<><><>0<>0<>ff1c00013ef3bbc7e9f539b9233bb9e7<>res://.godot/imported/sfx_laser2.wav-a9b3ed3b9dd7e84862322c92c5e067e3.sample::
+::res://assets/font/::1780186544
+Kenney Blocks.ttf::FontFile::6137285028899109863::1780186535::1780186544::1::::<><><>0<>0<>a5a8b7ce8c4aad4fc895ee5f4fc6ecc3<>res://.godot/imported/Kenney Blocks.ttf-0dfaffe2fefda88ad4794f6b60b99f7b.fontdata::
+::res://assets/textures/::1780186540
+bg.png::CompressedTexture2D::6226344148101623420::1780186535::1780186547::1::::<><><>0<>0<>542ba3427e50346d157f0718e0259943<>res://.godot/imported/bg.png-6eb74ab5396c64f230bdaa24e04060fa.ctex::
+enemy_ship.png::CompressedTexture2D::8126713182954122835::1780186535::1780186547::1::::<><><>0<>0<>0fbec41a5809fc407df5149683c3b9d5<>res://.godot/imported/enemy_ship.png-888748996752d876f0048b55371afd3c.ctex::
+enemy_ship_2.png::CompressedTexture2D::6266789978016504151::1780186535::1780186547::1::::<><><>0<>0<>92178a32c6a531b36bcb0458abfbfeee<>res://.godot/imported/enemy_ship_2.png-0ce3ac9d1349afc2bfe22b9a94a570cc.ctex::
+orb.png::CompressedTexture2D::1734162340365089896::1780186535::1780186547::1::::<><><>0<>0<>45276c10623cf09b19897a9049ff1716<>res://.godot/imported/orb.png-56873e17f78502efb0beef9bb55d6cd8.ctex::
+player_ship.png::CompressedTexture2D::3913591319110895245::1780186535::1780186547::1::::<><><>0<>0<>693cc7e6d2e87a40473715ac7c2d220c<>res://.godot/imported/player_ship.png-aae1365256bbca43c74df05ff23713f5.ctex::
+rocket.png::CompressedTexture2D::7621944416662000625::1780186535::1780186547::1::::<><><>0<>0<>2ec600f9468762d007320e5a9c9c7bbf<>res://.godot/imported/rocket.png-ea91b5e7dac3f4a2ee8d7627106edbe9.ctex::
+::res://scenes/::1780186496
+::res://scripts/::1780186499
